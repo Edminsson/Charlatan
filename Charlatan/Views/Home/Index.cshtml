@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Hitta charlatan";
+    ViewBag.Description = "Sök bland uppdiktade charlataner";
+}
+
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4"><h2>Hitta charlatan</h2></div>
+</div>
+
+
+<div ng-app="mainApp" ng-controller="mainController">
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="form-inline">
+                <input data-sok-focus data-sok-enter="modell.sok(modell.sokOrd)" ng-model="modell.sokOrd" type="text" class="form-control">
+                <button class="btn btn-primary" ng-click="modell.sok(modell.sokOrd)"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Sök</button>
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="modell.tomLista()">
+        Inga resultat
+    </div>
+    <div class="resultatlista">
+        <div class="row" ng-repeat="person in modell.personer">
+            <div class="col-sm-4" ng-class-even="'sokrad'" ng-class-odd="sokrad-alt">{{person.Name}}</div>
+            <div class="col-sm-4" ng-class-even="'sokrad'" ng-class-odd="sokrad-alt">{{person.Profession}}</div>
+            <div class="col-sm-4" ng-class-even="'sokrad'" ng-class-odd="sokrad-alt"><a ng-href="{{modell.detailsPath + '/' + person.Name}}">Visa</a></div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/charlatan")
+    <script src="//cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="//cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
+
+    <script type="text/javascript">
+        Charlatan.mainApp.constant('appGlobals', {
+            basePath: "@Url.Content("~/")",
+            detailsPath: "@Url.Action("Index","Details")",
+            searchPath: "@Url.Action("GetCharlatan", "Search", new { httproute = "" })"
+        });
+    </script>
+}
+

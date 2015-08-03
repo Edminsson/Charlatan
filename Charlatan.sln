@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charlatan", "Charlatan\Charlatan.csproj", "{B531F84D-E00D-4933-9444-829BBCF7F01A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charlatan.Tests", "Charlatan.Tests\Charlatan.Tests.csproj", "{74980EF4-47BF-4CFA-BEDD-24ABA959DA8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{811F447B-C3BF-4126-A2C6-7883AB7DAAFF}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{A5BD615E-BED2-4F04-BB0A-C6ADA711540E}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\Charlatan-WAWS-dev.json = PublishScripts\Configurations\Charlatan-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirebaseService", "FirebaseService\FirebaseService.csproj", "{83556B6B-DC22-49C5-B797-B9AE66167012}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B531F84D-E00D-4933-9444-829BBCF7F01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B531F84D-E00D-4933-9444-829BBCF7F01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B531F84D-E00D-4933-9444-829BBCF7F01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B531F84D-E00D-4933-9444-829BBCF7F01A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74980EF4-47BF-4CFA-BEDD-24ABA959DA8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74980EF4-47BF-4CFA-BEDD-24ABA959DA8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74980EF4-47BF-4CFA-BEDD-24ABA959DA8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74980EF4-47BF-4CFA-BEDD-24ABA959DA8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83556B6B-DC22-49C5-B797-B9AE66167012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83556B6B-DC22-49C5-B797-B9AE66167012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83556B6B-DC22-49C5-B797-B9AE66167012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83556B6B-DC22-49C5-B797-B9AE66167012}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A5BD615E-BED2-4F04-BB0A-C6ADA711540E} = {811F447B-C3BF-4126-A2C6-7883AB7DAAFF}
+	EndGlobalSection
+EndGlobal

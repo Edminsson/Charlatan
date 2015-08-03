@@ -1,0 +1,33 @@
+﻿@model FirebaseService.Models.Charlatan
+
+@{
+    ViewBag.Title = string.Format("{0} {1}", Model.Name, Model.Profession);
+    ViewBag.Description = string.Format("Uppgifter om den påhittade charlatanen {0} {1}", Model.Name, Model.Profession);
+}
+
+<h2>Detaljer om charlatan</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profession)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profession)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Tillbaka till söksidan", "Index", "Home")
+</p>
