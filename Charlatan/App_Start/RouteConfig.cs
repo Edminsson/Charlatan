@@ -14,6 +14,13 @@ namespace Charlatan
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "sitemap.xml",
+                url: "sitemap.xml",
+                defaults: new { controller = "Site", action = "SitemapXml" },
+                namespaces: new[] { "Auction.Web.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "Details",
                 url: "Details/{name}",
                 defaults: new { controller = "Details", action = "Index", name = UrlParameter.Optional }
