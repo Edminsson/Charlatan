@@ -11,6 +11,21 @@ namespace Charlatan.Models
     {
         [XmlElement("url")]
         public List<Sajtrad> Urler { get; set; }
+
+        public static Sajtkarta GetSajtkarta()
+        {
+            Sajtkarta sajtkarta = new Sajtkarta
+            {
+                Urler = new List<Sajtrad>
+                {
+                    new Sajtrad { Location = "http://charlataner.azurewebsites.net/"},
+                    new Sajtrad { Location = "http://charlataner.azurewebsites.net/Details/dmnglr"}
+                }
+            };
+
+            return sajtkarta;
+        }
+
     }
 
     public class Sajtrad

@@ -16,14 +16,14 @@ namespace Charlatan.Controllers
         public HttpResponseMessage Get()
         {
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
-            response.Content = new StringContent(SerialiseraSajtkarta(getSajtkarta()), Encoding.UTF8);
+            response.Content = new StringContent(SerialiseraSajtkarta(Sajtkarta.GetSajtkarta()), Encoding.UTF8);
             response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/xml");
             return response;
         }
 
         private string SerialiseraSajtkarta(Sajtkarta sajtkarta)
         {
-            XmlSerializer srlr = new XmlSerializer(typeof(Sajtkarta));
+            XmlSerializer srlr = new XmlSerializer(sajtkarta.GetType());
             XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
             ns.Add(string.Empty, "http://www.sitemaps.org/schemas/sitemap/0.9");
 
@@ -33,18 +33,5 @@ namespace Charlatan.Controllers
             return Encoding.UTF8.GetString(ms.ToArray());
         }
 
-        private Sajtkarta getSajtkarta()
-        {
-            Sajtkarta sajtkarta = new Sajtkarta
-            {
-                Urler = new List<Sajtrad>
-                {
-                    new Sajtrad { Location = "http://charlataner.azurewebsites.net/"},
-                    new Sajtrad { Location = "http://charlataner.azurewebsites.net/Details/dmnglr"}
-                }
-            };
-
-            return sajtkarta;
-        }
     }
 }
