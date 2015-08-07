@@ -19,7 +19,8 @@ namespace Charlatan.Models
                 Urler = new List<Sajtrad>
                 {
                     new Sajtrad { Location = "http://charlataner.azurewebsites.net/"},
-                    new Sajtrad { Location = "http://charlataner.azurewebsites.net/Details/dmnglr"}
+                    new Sajtrad { Location = "http://charlataner.azurewebsites.net/Details/dmnglr"},
+                    new Sajtrad { Location = "http://charlataner.azurewebsites.net/Details/sblcvd"}
                 }
             };
 
